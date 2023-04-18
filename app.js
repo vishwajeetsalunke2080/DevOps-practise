@@ -34,7 +34,7 @@ app.post("/",function(req,res){
 
 
 });
-
-app.listen(3000, function () {
+const port = process.env.PORT || 80;
+app.listen(port, function () {
   console.log("server is running on port 3000");
 });
