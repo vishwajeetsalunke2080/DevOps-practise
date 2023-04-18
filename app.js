@@ -17,18 +17,18 @@ app.post("/",function(req,res){
     var lName = req.body.lastName;
     var email = req.body.email;
     res.send("information recieved");
-    // var message = {
-    //   members:[
-    //     {
-    //       email_address : email,
-    //       status: "subscribed",
-    //       merge_fields:{
-    //         FNAME: fName,
-    //         LNAME:lName
-    //       }
-    //     }
-    //   ]
-    // };
+    var message = {
+      members:[
+        {
+          email_address : email,
+          status: "subscribed",
+          merge_fields:{
+            FNAME: fName,
+            LNAME:lName
+          }
+        }
+      ]
+    };
 
     console.log(req.body);
 
