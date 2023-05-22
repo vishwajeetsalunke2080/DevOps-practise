@@ -30,9 +30,22 @@ app.post("/",function(req,res){
       ]
     };
 
-    console.log(req.body);
+    
+const data = JSON.stringify(message);
+   const url = "https://us21.api.mailchimp.com/3.0/lists/e2af7d83ba"
+   const options = {
+        auth:"vishwajeet:c24950c0cb790fb9723203ad6ecf8157-us21",
+        method:"POST"
+   }
+   const request = https.request(url,options,function(response){
+      response.on("message",function(message){
+        console.log(message);
+      })
+   })
 
-
+   request.write(data);
+   request.end();
+console.log(req.body);
 });
 const port = process.env.PORT || 80;
 app.listen(port, function () {
